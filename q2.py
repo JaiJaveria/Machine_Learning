@@ -3,7 +3,8 @@ import numpy as np
 #to perform batch gradient descent for optimizing J(theta) according to question 1a.
 # TODO: update the file to take inputs of files.
 
-fileN="./data/q2/sampledPointsSmall.csv"
+fileN="./data/q2/sampledPoints.csv"
+# fileN="./data/q2/sampledPointsSmall.csv"
 data=pd.read_csv(fileN, delimiter=" ")
 #x1 x2 y
 #0 1 2
@@ -16,10 +17,10 @@ theta=np.array([0,0,0])
 
 dataSize=x.shape[0]
 # print(dataSize)
-batch_size=100
+batch_size=1000000
 converged=False
 leaning_rate=0.001
-epsilon=10e-2
+epsilon=10e-4
 pAvgJT=-1;
 firstPass=True
 #convergence criteria. I run the training for the whole epoch and compute the average JTheta that I got. and then compare it with the previous average and stop when that value is less than epsilon.
