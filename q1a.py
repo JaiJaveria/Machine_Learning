@@ -23,13 +23,13 @@ theta0=0
 converged=False
 leaning_rate=0.01
 jTheta=0
-epsilon=10e-2
+epsilon=10e-8
 m=len(valX)
 # print(m)
 i=0
-pAvgJT=-1;
 firstPass=True
 epochs=0
+pJTheta=0
 while not converged:
     epochs+=1
     sum1=0
@@ -52,6 +52,7 @@ while not converged:
     if abs(pJTheta-jTheta)< epsilon:
         converged=True
     pJTheta=jTheta
+
 print("theta0 ",theta0)
 print("theta1 ",theta1)
 print("epochs ",epochs)
