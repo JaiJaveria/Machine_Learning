@@ -55,11 +55,10 @@ def main():
     sigma1/=np.sum(y)
     # print(sigma0)
     # print(sigma1)
-    #calculate the linear boundary
+
+    #CALCULATE AND PLOT THE LINEAR BOUNDARY
     #in my defination mu1 is 1*n matrix and not n*1
     c=0.5*(mu1@(np.linalg.inv(sigma))@(mu1.T) -(mu0@(np.linalg.inv(sigma))@(mu0.T))) +np.log((1-phi)/phi)
-    # c=c.reshape(1)
-    # c=c[0]
     mat=(mu1-mu0)@(np.linalg.inv(sigma))
     #now to plot I have only looked at the first two values of mat
     a=mat[0][0]
@@ -70,7 +69,8 @@ def main():
     x1=np.array(x1).reshape(-1,1)
     x2=(c-a*x1)/(1*b)
     plt.plot(x1,x2, color='red')
-    plt.show()
+
+    #CALCULATE AND PLOT THE QUADRATIC BOUNDARY
 
 if __name__ == '__main__':
     main()

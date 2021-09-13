@@ -23,7 +23,7 @@ theta0=0
 converged=False
 leaning_rate=0.01
 jTheta=0
-epsilon=10e-8
+epsilon=1e-8
 m=len(valX)
 # print(m)
 i=0
@@ -45,6 +45,7 @@ while not converged:
     jTheta/=2*(corpus_size);
     theta0=theta0+ leaning_rate*sum0;
     theta1=theta1+ leaning_rate*sum1;
+    print(theta0,theta1)
     if firstPass:
         firstPass=False
         pJTheta=jTheta
@@ -53,6 +54,6 @@ while not converged:
         converged=True
     pJTheta=jTheta
 
-print("theta0 ",theta0)
-print("theta1 ",theta1)
-print("epochs ",epochs)
+# print("theta0 ",theta0)
+# print("theta1 ",theta1)
+# print("epochs ",epochs)

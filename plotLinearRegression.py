@@ -17,14 +17,14 @@ for v in y:
     valY.append(float(v));
 fileX.close()
 fileY.close()
-# axes = plt.gca()
-# axes.set_xlim([xmin,xmax])
-# axes.set_ylim([0.99,1])
 valX=np.array(valX)
 valY=np.array(valY)
 plt.scatter(valX,valY)
-theta0=0.9963116206491764
-theta1=0.0013397811936466525
+plt.title('Linear Regression on Density and Acidity of Wine')
+plt.xlabel('Acidity of Wine (Normalized)')
+plt.ylabel('Density of Wine')
+theta0=0.995640206854871
+theta1= 0.0013388783159163085
 x = np.linspace(-2,5,100)
 y = theta1*x+theta0
 plt.plot(x,y, color='red')
